@@ -4,9 +4,13 @@ var topics = ["Game of Thrones", "Westworld", "Mad Men", "Silicon Valley",
 
 var current_topic = "";
 
+var alt_url_array = [];
+
 function displayGifInfo() {
 
   $("#gif-view").empty();
+
+  alt_url_array.length = 0;
 
   var topic = $(this).attr("data-name");
 
@@ -25,6 +29,7 @@ function displayGifInfo() {
       gifDiv.attr('gif-id', response.data[i].id);
 
       var image_url = response.data[i].images.fixed_height_still.url;
+      alt_url_array.push(response.data[i].images.fixed_height.url);
       var image = $('<img>').attr('src', image_url);
       gifDiv.attr('image-position', i);
       image.attr('id', i);
@@ -73,36 +78,33 @@ function animateGif(){
 
   console.log(img_id);
 
-  var query_url = "https://api.giphy.com/v1/gifs/search?q=" + current_topic + "&api_key=T0bbTEWMOVBUV0jJAJgYlASvLWncNNyr&limit=10";
+  console.log(alt_url_array[img_id]);
 
-  $.ajax({
-    url: query_url,
-    method: "GET"
-  }).done(function(response) {
+  var animate_flag = $('#' + img_id).attr('animate');
 
-    var animate_flag = $('#' + img_id).attr('animate');
+  if(animate_flag === 'false'){
 
-    if(animate_flag === 'false'){
+    var current_url = $('#' + img_id).attr('src');
 
-      var image_url = response.data[img_id].images.fixed_height.url;
+    var image_url = alt_url_array[img_id];
 
-      $('#' + img_id).attr('src', image_url);
+    $('#' + img_id).attr('src', image_url);
+    alt_url_array[img_id] = current_url;
 
-      $('#' + img_id).attr('animate', 'true');
+    $('#' + img_id).attr('animate', 'true');
 
-    }
-    else if(animate_flag === 'true'){
+  }
+  else if(animate_flag === 'true'){
 
-      var image_url = response.data[img_id].images.fixed_height_still.url;
+    var current_url = $('#' + img_id).attr('src');
 
-      $('#' + img_id).attr('src', image_url);
+    var image_url = alt_url_array[img_id];
 
-      $('#' + img_id).attr('animate', 'false');
-       
-    }
+    $('#' + img_id).attr('src', image_url);
+    alt_url_array[img_id] = current_url;
 
-  });
-
+    $('#' + img_id).attr('animate', 'false');
+  }
 }
 
 
