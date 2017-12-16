@@ -8,7 +8,7 @@ function displayGifInfo() {
 
   current_topic = topic;
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=T0bbTEWMOVBUV0jJAJgYlASvLWncNNyr&limit=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=T0bbTEWMOVBUV0jJAJgYlASvLWncNNyr&limit=10";
 
   $.ajax({
     url: queryURL,
@@ -69,7 +69,7 @@ function animateGif(){
 
   console.log(img_id);
 
-  var query_url = "http://api.giphy.com/v1/gifs/search?q=" + current_topic + "&api_key=T0bbTEWMOVBUV0jJAJgYlASvLWncNNyr&limit=10";
+  var query_url = "https://api.giphy.com/v1/gifs/search?q=" + current_topic + "&api_key=T0bbTEWMOVBUV0jJAJgYlASvLWncNNyr&limit=10";
 
   $.ajax({
     url: query_url,
