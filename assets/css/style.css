@@ -6,31 +6,84 @@ form,input {
 
 }
 
-.gif {
+body{
 
-  display: inline-block;
-  margin-bottom: 8px;
-  width: calc(50% - 4px);
-  margin-right: 8px;
 
-}
-
-.gif:nth-of-type(2n) {
-
-  margin-right: 0;
+	font-family: Arial, Verdana, sans-serif;
+	background-color: #EFE2BA;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 
 }
 
-@media screen and (min-width: 50em) {
-  .gif {
-    width: calc(25% - 6px);
-  }
+h1{
 
-  .gif:nth-of-type(2n) {
-    margin-right: 8px;
-  }
+	background-color: #4056A1;
+	padding: 10px;
+	margin-right: 45%;
 
-  .gif:nth-of-type(4n) {
-    margin-right: 0;
-  }
 }
+
+#buttons-view{
+
+	background-color: #C5CBE3;
+	padding: 10px;
+
+}
+
+button{
+
+	color: #F13C20;
+	background: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	outline: none;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: initial;
+	transition-delay: initial;
+
+}
+
+button:hover {
+
+    color: #D79922; /* Green */
+    background-color: #4056A1;
+
+}
+
+#add-gif{
+
+	color: #F13C20;
+	background: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	outline: none;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: initial;
+	transition-delay: initial;
+}
+
+#add-gif:hover {
+
+    background-color: #4056A1; /* Green */
+    color: #D79922;
+}
+
+
+
+
+.gif{
+
+	float: left;
+	border-style: solid black 5px;
+	margin: 5px;
+	padding: 5px;
+	.clear{
+		clear: left;
+	}
+}
+
+
+

@@ -1,8 +1,12 @@
-var topics = ["pandas", "corgis", "kittens", "seals"];
+var topics = ["Game of Thrones", "Westworld", "Mad Men", "Silicon Valley",
+              "Mr. Robot", "Breaking Bad", "Rick and Morty", "Bojack Horseman",
+              "Archer", "Bob's Burgers"];
 
 var current_topic = "";
 
 function displayGifInfo() {
+
+  $("#gif-view").empty();
 
   var topic = $(this).attr("data-name");
 
