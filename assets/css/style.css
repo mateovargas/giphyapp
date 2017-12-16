@@ -1,0 +1,36 @@
+button,
+div,
+form,input {
+
+	margin: 10px;
+
+}
+
+.gif {
+
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+
+}
+
+.gif:nth-of-type(2n) {
+
+  margin-right: 0;
+
+}
+
+@media screen and (min-width: 50em) {
+  .gif {
+    width: calc(25% - 6px);
+  }
+
+  .gif:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+
+  .gif:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
